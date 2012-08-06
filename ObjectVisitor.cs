@@ -35,15 +35,25 @@ namespace Cwp.ObjectVisitor
         {
         }
 
-        public ObjectVisitor()
+        public ObjectVisitor(IDictionary<Type, ITypeHandler<TContext>> typeHandlers = null)
         {
             _elementType = typeof(T);
+            if (!typeHandlers.IsNull())
+            {
+                typeHandlers.ToList().ForEach(x => _typeHandlers.Add(x));
+            }
         }
 
         public ObjectVisitor<T, TContext> WithTypeHandler<P>(ITypeHandler<TContext> handler)
         {
             _typeHandlers.Add(typeof(P), handler);
             return this;
+        }
+
+        public ObjectVisitor<T, TContext> RegisterTypeToVisit<TVisitable>(IComplexTypeHandler<TContext> complexTypeHandler)
+        {
+            _typeHandlers.Add(typeof(TVisitable),);
+            
         }
 
         protected Func<TContext, ITypeHandler<TContext>[], T> ReaderFunc

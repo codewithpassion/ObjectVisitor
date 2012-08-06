@@ -12,7 +12,6 @@ namespace Cwp.ObjectVisitor.TypeHandlers
         {
             _writeFunction = writeFunction;
             _readerFunction = readerFunction;
-            _readerFunction = readerFunction;
         }
 
         protected Action<TContext, MemberInfo, T> WriteFunction
