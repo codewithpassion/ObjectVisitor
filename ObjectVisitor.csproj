@@ -43,6 +43,7 @@
     <Compile Include="Extensions.cs" />
     <Compile Include="ObjectVisitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypeHandlers\ComplexTypeHandler.cs" />
     <Compile Include="TypeHandlers\GenericTypeHandler.cs" />
     <Compile Include="TypeHandlers\GenericValueTypeHandler.cs" />
     <Compile Include="TypeHandlers\ITypeHandler.cs" />
